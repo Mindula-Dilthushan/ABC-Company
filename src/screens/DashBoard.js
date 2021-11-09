@@ -26,7 +26,10 @@ export default class DashBoard extends Component {
                     <Image source={require('../assets/air.png')} resizeMode="contain" style={styles.airImg}/>
                     <Text style={styles.txtMenu1}> Air Conditioners </Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.menuContent2}>
+                <TouchableOpacity style={styles.menuContent2}
+                                  onPress={() => {
+                                      this.props.navigation.navigate('Beds');
+                                  }}>
                     <Image source={require('../assets/beds.png')} resizeMode="contain" style={styles.bedsImg}/>
                     <Text style={styles.txtMenu2}> Beds </Text>
                 </TouchableOpacity>
@@ -44,7 +47,7 @@ export default class DashBoard extends Component {
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.menuContent6}>
                     <Image source={require('../assets/side.png')} resizeMode="contain" style={styles.airImg}/>
-                    <Text style={styles.txtMenu6}> Coffee & Side Table  </Text>
+                    <Text style={styles.txtMenu6}> Coffee & Side Table </Text>
                 </TouchableOpacity>
 
                 <View style={styles.bottomSection}>
@@ -85,7 +88,7 @@ const styles = StyleSheet.create({
         height: 80,
         backgroundColor: '#007ac7',
         elevation: 8,
-        marginTop:0,
+        marginTop: 0,
         justifyContent: 'center',
         display: 'flex',
     },
@@ -185,14 +188,14 @@ const styles = StyleSheet.create({
         marginTop: -215,
         marginLeft: 20,
     },
-    carAudioImg:{
+    carAudioImg: {
         width: 60,
         display: 'flex',
         position: 'absolute',
         marginTop: -170,
         marginLeft: 20,
     },
-    bedsImg:{
+    bedsImg: {
         width: 60,
         display: 'flex',
         position: 'absolute',
@@ -205,43 +208,43 @@ const styles = StyleSheet.create({
         marginTop: 55,
         textAlign: 'center',
     },
-    txtMenu2:{
+    txtMenu2: {
         color: '#000000',
         fontSize: 15,
         marginTop: 65,
         textAlign: 'center',
     },
-    txtMenu3:{
+    txtMenu3: {
         color: '#000000',
         fontSize: 15,
         marginTop: 72,
         textAlign: 'center',
     },
-    txtMenu4:{
+    txtMenu4: {
         color: '#000000',
         fontSize: 15,
         marginTop: 72,
         textAlign: 'center',
     },
-    txtMenu5:{
+    txtMenu5: {
         color: '#000000',
         fontSize: 15,
         marginTop: 70,
         textAlign: 'center',
     },
-    txtMenu6:{
+    txtMenu6: {
         color: '#000000',
         fontSize: 15,
         marginTop: 60,
         textAlign: 'center',
     },
-    bottomSection:{
-        width:350,
-        height:100,
-        marginTop:20,
+    bottomSection: {
+        width: 350,
+        height: 100,
+        marginTop: 20,
         elevation: 8,
-        borderRadius:20,
-        backgroundColor:"#ffffff"
+        borderRadius: 20,
+        backgroundColor: '#ffffff',
     },
     footerContent: {
         width: 395,
