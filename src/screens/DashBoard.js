@@ -22,25 +22,34 @@ export default class DashBoard extends Component {
                     <Image source={require('../assets/product.png')} resizeMode="contain" style={styles.mainImg}/>
                 </View>
 
-
                 <TouchableOpacity style={styles.menuContent}>
-                    <View style={styles.imgSection}>
-                        {/*<Image source={require('../assets/air.png')} resizeMode="contain" style={styles.airImg}/>*/}
-                    </View>
+                    <Image source={require('../assets/air.png')} resizeMode="contain" style={styles.airImg}/>
                     <Text style={styles.txtMenu1}> Air Conditioners </Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.menuContent2}>
-                    <Text style={styles.txtMenu1}> Air Conditioner </Text>
+                    <Image source={require('../assets/beds.png')} resizeMode="contain" style={styles.bedsImg}/>
+                    <Text style={styles.txtMenu2}> Beds </Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.menuContent3}>
+                    <Image source={require('../assets/bedroom.png')} resizeMode="contain" style={styles.airImg}/>
+                    <Text style={styles.txtMenu3}> Bedroom Sets </Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.menuContent4}>
+                    <Image source={require('../assets/blenders.png')} resizeMode="contain" style={styles.airImg}/>
+                    <Text style={styles.txtMenu4}> Blenders </Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.menuContent5}>
+                    <Image source={require('../assets/car.png')} resizeMode="contain" style={styles.carAudioImg}/>
+                    <Text style={styles.txtMenu5}> Car Audio </Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.menuContent6}>
+                    <Image source={require('../assets/side.png')} resizeMode="contain" style={styles.airImg}/>
+                    <Text style={styles.txtMenu6}> Coffee & Side Table  </Text>
                 </TouchableOpacity>
 
+                <View style={styles.bottomSection}>
+
+                </View>
                 <View style={styles.footerContent}>
                     <TouchableOpacity style={styles.footer1}>
                         <Image source={require('../assets/home.png')} resizeMode="contain" style={styles.homeImg}/>
@@ -76,6 +85,7 @@ const styles = StyleSheet.create({
         height: 80,
         backgroundColor: '#007ac7',
         elevation: 8,
+        marginTop:0,
         justifyContent: 'center',
         display: 'flex',
     },
@@ -167,25 +177,77 @@ const styles = StyleSheet.create({
         marginTop: -100,
         marginLeft: 240,
     },
-    imgSection:{
-        width:60,
-        height:60,
-        backgroundColor:"#71eaff",
-        marginTop:20,
-        marginLeft:20,
-        borderRadius:10,
+
+    airImg: {
+        width: 60,
+        display: 'flex',
+        position: 'absolute',
+        marginTop: -215,
+        marginLeft: 20,
+    },
+    carAudioImg:{
+        width: 60,
+        display: 'flex',
+        position: 'absolute',
+        marginTop: -170,
+        marginLeft: 20,
+    },
+    bedsImg:{
+        width: 60,
+        display: 'flex',
+        position: 'absolute',
+        marginTop: -75,
+        marginLeft: 20,
     },
     txtMenu1: {
         color: '#000000',
         fontSize: 15,
-        marginTop: 45,
+        marginTop: 55,
         textAlign: 'center',
+    },
+    txtMenu2:{
+        color: '#000000',
+        fontSize: 15,
+        marginTop: 65,
+        textAlign: 'center',
+    },
+    txtMenu3:{
+        color: '#000000',
+        fontSize: 15,
+        marginTop: 72,
+        textAlign: 'center',
+    },
+    txtMenu4:{
+        color: '#000000',
+        fontSize: 15,
+        marginTop: 72,
+        textAlign: 'center',
+    },
+    txtMenu5:{
+        color: '#000000',
+        fontSize: 15,
+        marginTop: 70,
+        textAlign: 'center',
+    },
+    txtMenu6:{
+        color: '#000000',
+        fontSize: 15,
+        marginTop: 60,
+        textAlign: 'center',
+    },
+    bottomSection:{
+        width:350,
+        height:100,
+        marginTop:20,
+        elevation: 8,
+        borderRadius:20,
+        backgroundColor:"#ffffff"
     },
     footerContent: {
         width: 395,
         height: 70,
         backgroundColor: '#007ac7',
-        marginTop: 151,
+        marginTop: 31,
     },
     footer1: {
         width: 50,
