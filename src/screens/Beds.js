@@ -5,8 +5,64 @@ import {Title} from 'react-native-paper';
 export default class Beds extends Component{
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            itemName: ' ',
+            itemDescription: ' ',
+            itemQty: ' ',
+            itemUnitPrice: ' ',
+        };
     }
+
+    saveItem = async (data) => {
+        await fetch("http://localhost:3000/item/add",{
+            method:"POST",
+            headers: {
+                accept:"application/json",
+                "Content-type" : "application/json"
+            },
+            body:JSON.stringify(data)
+        }).then(res => {
+            res.json()
+        }).then(data => {
+            alert("Success !!!")
+        }).catch(err => {
+            alert("no")
+            if (err) console.log(err);
+        })
+    }
+
+    stateItemName = (e) => {
+        this.setState({
+            itemName: e
+        })
+    }
+    stateItemDescription = (e) => {
+        this.setState({
+            itemDescription: e
+        })
+    }
+    stateItemQty = (e) => {
+        this.setState({
+            itemQty: e
+        })
+    }
+    stateItemUnitPrice = (e) => {
+        this.setState({
+            itemUnitPrice: e
+        })
+    }
+
+    btnSave = () => {
+
+        const data = {
+            "itemName": this.state.itemName,
+            "itemDescription": this.state.itemDescription,
+            "itemQty": this.state.itemQty,
+            "itemUnitPrice": this.state.itemUnitPrice
+        }
+        this.saveItem(data)
+    }
+
     render() {
         return(
             <KeyboardAvoidingView style={styles.container}>
@@ -21,37 +77,44 @@ export default class Beds extends Component{
                     <Text style={styles.lblName}> Item Name </Text>
                     <TextInput
                         style={styles.txtItemName}
-                        // onChangeText={(e) => {
-                        //     this.stateIncomeDate(e)
-                        // }}
-                        // value={this.state.incomeDate}
+                        onChangeText={(e) => {
+                            this.stateItemName(e)
+                        }}
+                        value={this.state.itemName}
                     >
                     </TextInput>
                     <Text style={styles.lblDescription}> Item Description </Text>
                     <TextInput
                         style={styles.txtDescription}
+                        onChangeText={(e) => {
+                            this.stateItemDescription(e)
+                        }}
+                        value={this.state.itemDescription}
                     >
                     </TextInput>
                     <Text style={styles.lblQty}> Item QTY </Text>
                     <TextInput
                         style={styles.txtItemName}
-                        // onChangeText={(e) => {
-                        //     this.stateIncomeDate(e)
-                        // }}
-                        // value={this.state.incomeDate}
+                        onChangeText={(e) => {
+                            this.stateItemQty(e)
+                        }}
+                        value={this.state.itemQty}
                     >
                     </TextInput>
                     <Text style={styles.lblUnitPrice}> Item Unit Price </Text>
                     <TextInput
                         style={styles.txtItemName}
-                        // onChangeText={(e) => {
-                        //     this.stateIncomeDate(e)
-                        // }}
-                        // value={this.state.incomeDate}
+                        onChangeText={(e) => {
+                            this.stateItemUnitPrice(e)
+                        }}
+                        value={this.state.itemUnitPrice}
                     >
                     </TextInput>
 
                     <TouchableOpacity
+                        onPress={() => {
+                            this.btnSave()
+                        }}
                      style={styles.btnSave}>
                         <Text style={styles.btnSaveText}>{'Save'}</Text>
                     </TouchableOpacity>
