@@ -31,7 +31,7 @@ export default class SignIn extends Component {
 
                 {/*----------------Button ------------------*/}
                 <TouchableOpacity onPress={() => {
-                        this.props.navigation.navigate('DashBoard');
+                        this.props.navigation.navigate('SignUp');
                 }} style={styles.btnSignIn}>
                     <Text style={styles.btnSignInTxt}>{'Sign In'}</Text>
                 </TouchableOpacity>
